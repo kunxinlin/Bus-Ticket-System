@@ -5,7 +5,7 @@ import java.sql.*;
 
 //Student Entity
 @Entity //This will let Java know that this is an entity that we are going to map to a database table.
-@Table(name = "student") //This is for the actual name of the database table name we are mapping to the class.
+@Table(name = "ticket") //This is for the actual name of the database table name we are mapping to the class.
 public class Ticket {
 
     //Database Mapping
