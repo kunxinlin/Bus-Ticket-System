@@ -1,2 +1,14 @@
 
 .idea/
+
+out/production/Bus-Ticket-System/busTicketSystem/Main.class
+
+out/production/Bus-Ticket-System/entity/Ticket.class
+
+out/production/Bus-Ticket-System/hibernate.cfg.xml
+
+out/production/Bus-Ticket-System/resources/hibernate.cfg.xml
+
+out/production/Bus-Ticket-System/testConnection/TestConnection.class
+
+out/production/Bus-Ticket-System/
