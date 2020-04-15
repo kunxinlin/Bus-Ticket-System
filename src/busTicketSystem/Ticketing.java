@@ -5,7 +5,50 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import java.util.List;
+
 public class Ticketing {
+
+    public static void main(String[] args) {
+        displayQuery(getAvailableTickets());
+        displayQuery(getAllTickets());
+    }
+
+    public static List<Ticket> getAvailableTickets(){
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Ticket.class)
+                .buildSessionFactory();
+
+        Session session = factory.getCurrentSession();
+
+        try{
+            session.beginTransaction();
+
+            List<Ticket> tickets = session.createQuery("FROM Ticket WHERE first_name IS NULL").getResultList();
+            return tickets;
+
+        }finally{
+            factory.close();
+        }
+    }
+
+    public static List<Ticket> getAllTickets(){
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Ticket.class)
+                .buildSessionFactory();
+
+        Session session = factory.getCurrentSession();
+
+        try{
+            session.beginTransaction();
+
+            List<Ticket> tickets = session.createQuery("FROM Ticket").getResultList();
+            return tickets;
+
+        }finally{
+            factory.close();
+        }
+    }
 
     public static void updateInfo(int ticketNum, String firstName, String lastName, String email, String phone, String gender, int age){
 
@@ -35,5 +78,11 @@ public class Ticketing {
             factory.close();
         }
 
+    }
+
+    public static void displayQuery(List<Ticket> tickets) {
+        for(Ticket t : tickets) {
+            System.out.println(t);
+        }
     }
 }
