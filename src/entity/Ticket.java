@@ -3,15 +3,15 @@ package entity;
 import javax.persistence.*;
 import java.sql.*;
 
-//Student Entity
-@Entity //This will let Java know that this is an entity that we are going to map to a database table.
-@Table(name = "student") //This is for the actual name of the database table name we are mapping to the class.
+
+@Entity
+@Table(name = "ticket")
 public class Ticket {
 
     //Database Mapping
-    @Id //This will map the primary key
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //This is used with auto increment for your primary key.
-    @Column(name = "ticket_number") //This is mapping the primary key to the id column in your database.
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ticket_number")
     private int ticketNumber;
 
     @Column(name = "date")
@@ -29,13 +29,13 @@ public class Ticket {
     @Column(name = "estimated_time_arrival")
     private Timestamp eta;
 
-    @Column(name = "first_name") //This will map the firstName field to the column named first_name in your student table.
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "last_name") //This will map the lastName field to the column named last_name in your student table.
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "email") //This will map the email field to the column named email in your student table.
+    @Column(name = "email")
     private String email;
 
     @Column(name = "phone")
@@ -56,10 +56,13 @@ public class Ticket {
 
     }
 
-    public Ticket(String firstName, String lastName, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
+    public Ticket(Date date, String origin, String destination, Time departure, Timestamp eta, double price) {
+        this.date = date;
+        this.origin = origin;
+        this.destination = destination;
+        this.departure = departure;
+        this.eta = eta;
+        this.price = price;
     }
 
     public String getFirstName() {
@@ -169,11 +172,19 @@ public class Ticket {
     //To string method
     @Override
     public String toString() {
-        return "Student{" +
+        return "Ticket{" +
                 "ticketNumber=" + ticketNumber +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", gender='" + gender + '\'' +
+                ", age='" + age + '\'' +
+                ", date='" + date + '\'' +
+                ", destination='" + destination + '\'' +
+                ", departure time='" + departure + '\'' +
+                ", eta='" + eta + '\'' +
+                ", price='" + price + '\'' +
                 '}';
     }
 }
