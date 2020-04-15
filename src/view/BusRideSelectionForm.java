@@ -29,6 +29,10 @@ public class BusRideSelectionForm {
 
 	private static HashMap<String, HashMap<String, HashMap<String, Ticket>>> allOptions;
 
+	public static Ticket getSelectedTicket() {
+		return selectedTicket;
+	}
+
 	public static Scene getScene() {
 		if(scene == null)
 			scene = createScene();
@@ -115,6 +119,8 @@ public class BusRideSelectionForm {
 				list.addAll(allOptions.get(newDestination).keySet());
 			previousDestination = newDestination;
 			origin.setItems(list);
+			if(list.size() == 1)
+				origin.setValue(list.get(0));
 		}
 		String newOrigin = origin.getValue();
 		if(!Objects.equals(previousOrigin, newOrigin)) {
@@ -126,6 +132,8 @@ public class BusRideSelectionForm {
 				list.addAll(allOptions.get(newDestination).get(newOrigin).keySet());
 			previousOrigin = newOrigin;
 			departureTime.setItems(list);
+			if(list.size() == 1)
+				departureTime.setValue(list.get(0));
 		}
 		String newTime = departureTime.getValue();
 		if(!Objects.equals(previousTime, newTime)) {
