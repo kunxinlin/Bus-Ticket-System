@@ -2,9 +2,7 @@ package view;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.stage.Modality;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 public class BusTicketApp extends Application {
@@ -18,7 +16,7 @@ public class BusTicketApp extends Application {
 	public void start(Stage stage) throws Exception {
 		mainStage = stage;
 		stage.setTitle("Bus Ticket System");
-		setScene(BusRideSelectionForm.createScene());
+		setScene(BusRideSelectionForm.getScene());
 	}
 
 	public static void setScene(Scene scene) {
