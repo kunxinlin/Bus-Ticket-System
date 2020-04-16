@@ -188,7 +188,7 @@ public class Ticket {
                 ", price='" + price + '\'' +
                 '}';
     }
-    
+
     public String printTicket() {
         return String.format("Ticket No.: %s || Name: %s, %s || Date: %s || Departure: %s || Departure Time: %s || Arrival: %s || Estimated Arrival Time: %s || Price: %s",
                 ticketNumber,

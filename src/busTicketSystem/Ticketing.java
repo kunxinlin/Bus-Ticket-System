@@ -83,7 +83,7 @@ public class Ticketing {
 		finally {
 			factory.close();
 		}
-
+		writeTicketsToFile();
 	}
 
 	public static void displayQuery(List<Ticket> tickets) {
