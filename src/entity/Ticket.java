@@ -172,7 +172,7 @@ public class Ticket {
     //To string method
     @Override
     public String toString() {
-        return "Employee{" +
+        return "Ticket{" +
                 "ticketNumber=" + ticketNumber +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +

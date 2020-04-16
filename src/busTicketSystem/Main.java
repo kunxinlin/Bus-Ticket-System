@@ -1,9 +1,9 @@
 package busTicketSystem;
 
-import view.BasicApp;
+import view.BusTicketApp;
 
 public class Main {
     public static void main(String[] args) {
-		BasicApp.begin(args);
+		BusTicketApp.begin(args);
     }
 }
