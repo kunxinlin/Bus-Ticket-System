@@ -2,6 +2,7 @@ package entity;
 
 import javax.persistence.*;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 
 
 @Entity
@@ -187,4 +188,42 @@ public class Ticket {
                 ", price='" + price + '\'' +
                 '}';
     }
+    
+    public String printTicket() {
+        return String.format("Ticket No.: %s || Name: %s, %s || Date: %s || Departure: %s || Departure Time: %s || Arrival: %s || Estimated Arrival Time: %s || Price: %s",
+                ticketNumber,
+                lastName, firstName,
+                new SimpleDateFormat("MM/dd/yyyy").format(date),
+                origin,
+                new SimpleDateFormat("hh:mm aa").format(departure),
+                destination,
+                new SimpleDateFormat("MM/dd/yyyy hh:mm aa").format(eta.getTime()),
+                price
+        );
+    }
+
+    /*public void writeTicketToFile() throws IOException {
+        String tempPath = System.getProperty("user.dir") + "\\src\\tickets.txt";
+        Files.createFile(Paths.get(tempPath));
+        Files.write(Paths.get(tempPath),
+                String.format("""
+                              Ticket No.: %s
+                              Date: %s
+                              Passenger: %s, %s
+                              Departure: %s
+                              Departure Time: %s
+                              Arrival: %s
+                              Estimated Arrival Time: %s
+                              Price: %s
+                              """,
+                        ticketNumber,
+                        new SimpleDateFormat("MM/dd/yyyy").format(date),
+                        lastName, firstName,
+                        origin,
+                        new SimpleDateFormat("hh:mm aa").format(departure),
+                        destination,
+                        new SimpleDateFormat("MM/dd/yyyy hh:mm aa").format(eta.getTime()),
+                        price
+                        ).getBytes(), StandardOpenOption.CREATE_NEW);
+    }*/
 }
