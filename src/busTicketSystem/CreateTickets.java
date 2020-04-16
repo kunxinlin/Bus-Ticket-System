@@ -41,6 +41,7 @@ public class CreateTickets {
             Ticket t19= new Ticket(Date.valueOf("2020-08-26"), "Atlanta", "Indianapolis", Time.valueOf("09:00:00"), Timestamp.valueOf("2020-08-26 18:00:00"), 135.00);
             Ticket t20= new Ticket(Date.valueOf("2020-08-26"), "Atlanta", "Richmond", Time.valueOf("08:00:00"), Timestamp.valueOf("2020-08-26 16:30:00"), 127.50);
             Ticket t21= new Ticket(Date.valueOf("2020-08-31"), "Atlanta", "New York City", Time.valueOf("16:00:00"), Timestamp.valueOf("2020-09-01 7:30:00"), 232.50);
+            Ticket t22= new Ticket(Date.valueOf("2020-08-31"), "Orlando", "Jacksonville", Time.valueOf("09:00:00"), Timestamp.valueOf("2020-08-31 11:15:00"), 33.75);
 
             session.beginTransaction();
             System.out.println("Beginning transaction...");
@@ -66,6 +67,7 @@ public class CreateTickets {
             session.save(t19);
             session.save(t20);
             session.save(t21);
+            session.save(t22);
 
             //commit the transaction
             session.getTransaction().commit();

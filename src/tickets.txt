@@ -1,2 +1,1 @@
-Ticket No.: 11 || Name: Test, Another || Date: 08/20/2020 || Departure: Atlanta || Departure Time: 07:30 AM || Arrival: Charlotte || Estimated Arrival Time: 08/21/2020 11:15 AM || Price: 47.81
-Ticket No.: 12 || Name: Test, Test || Date: 08/20/2020 || Departure: Atlanta || Departure Time: 08:30 AM || Arrival: Charleston || Estimated Arrival Time: 08/21/2020 02:00 PM || Price: 30.94
+Ticket No.: 6 || Name: asdasd, adsasd || Date: 08/20/2020 || Departure: Atlanta || Departure Time: 08:00 AM || Arrival: Jacksonville || Estimated Arrival Time: 08/21/2020 03:00 PM || Price: 63.00
