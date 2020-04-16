@@ -188,9 +188,16 @@ public class Ticket {
                 ", price='" + price + '\'' +
                 '}';
     }
-    
+
+    public double getDiscountedPrice() {
+        double discountedPrice = price;
+        discountedPrice *= gender.toLowerCase().equals("female") ? 0.75 : 1;
+        discountedPrice *= age <= 12 ? .5 : age >= 60 ? .6 : 1;
+        return discountedPrice;
+    }
+
     public String printTicket() {
-        return String.format("Ticket No.: %s || Name: %s, %s || Date: %s || Departure: %s || Departure Time: %s || Arrival: %s || Estimated Arrival Time: %s || Price: %s",
+        return String.format("Ticket No.: %s || Name: %s, %s || Date: %s || Departure: %s || Departure Time: %s || Arrival: %s || Estimated Arrival Time: %s || Price: %.2f",
                 ticketNumber,
                 lastName, firstName,
                 new SimpleDateFormat("MM/dd/yyyy").format(date),
@@ -198,7 +205,7 @@ public class Ticket {
                 new SimpleDateFormat("hh:mm aa").format(departure),
                 destination,
                 new SimpleDateFormat("MM/dd/yyyy hh:mm aa").format(eta.getTime()),
-                price
+                getDiscountedPrice()
         );
     }
 

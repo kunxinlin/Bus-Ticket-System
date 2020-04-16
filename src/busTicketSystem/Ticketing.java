@@ -56,6 +56,20 @@ public class Ticketing {
 		}
 	}
 
+	public static List<Ticket> getPurchasedTickets() {
+		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
+				.addAnnotatedClass(Ticket.class)
+				.buildSessionFactory();
+		Session session = factory.getCurrentSession();
+		try {
+			session.beginTransaction();
+			List<Ticket> tickets = session.createQuery("FROM Ticket WHERE first_name IS NOT NULL", Ticket.class).list();
+			return tickets;
+		}  finally {
+			factory.close();
+		}
+	}
+
 	public static void updateInfo(int ticketNum, String firstName, String lastName, String email, String phone, String gender, int age) {
 
 		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
@@ -83,7 +97,7 @@ public class Ticketing {
 		finally {
 			factory.close();
 		}
-
+		writeTicketsToFile();
 	}
 
 	public static void displayQuery(List<Ticket> tickets) {
@@ -93,20 +107,8 @@ public class Ticketing {
 	}
 
 	public static void writeTicketsToFile() {
-		List<Ticket> ticketList = new ArrayList<>();
 		String ticketPath = System.getProperty("user.dir") + "\\src\\tickets.txt";
-		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
-				.addAnnotatedClass(Ticket.class)
-				.buildSessionFactory();
-		Session session = factory.getCurrentSession();
-		try {
-			session.beginTransaction();
-			ticketList = session.createQuery("FROM Ticket", Ticket.class).list();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			session.close();
-		}
+		List<Ticket> ticketList = getPurchasedTickets();
 		String ticketFile = ticketList.stream().map(ticket -> ticket.printTicket()).reduce((acc, next) -> acc + "\n" + next).orElse("");
 		try {
 			Files.write(Paths.get(ticketPath), ticketFile.getBytes());
