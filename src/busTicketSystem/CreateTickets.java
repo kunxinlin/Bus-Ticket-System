@@ -25,7 +25,7 @@ public class CreateTickets {
             Ticket t3= new Ticket(Date.valueOf("2020-08-21"), "Atlanta", "Nashville", Time.valueOf("08:00:00"), Timestamp.valueOf("2020-08-21 12:45:00"), 71.25);
             Ticket t4= new Ticket(Date.valueOf("2020-08-21"), "Nashville", "Knoxville", Time.valueOf("01:30:00"), Timestamp.valueOf("2020-08-21 05:30:00"), 60.00);
             Ticket t5= new Ticket(Date.valueOf("2020-08-21"), "Atlanta", "Orlando", Time.valueOf("08:30:00"), Timestamp.valueOf("2020-08-21 16:00:00"), 112.50);
-            Ticket t6= new Ticket(Date.valueOf("2020-08-21"), "Atlanta", "Savannah", Time.valueOf("08:00:00"), Timestamp.valueOf("2020-08-21 15:00:00"), 105.00);
+            Ticket t6= new Ticket(Date.valueOf("2020-08-21"), "Atlanta", "Jacksonville", Time.valueOf("08:00:00"), Timestamp.valueOf("2020-08-21 15:00:00"), 105.00);
             Ticket t7= new Ticket(Date.valueOf("2020-08-21"), "Atlanta", "Jacksonville", Time.valueOf("08:30:00"), Timestamp.valueOf("2020-08-21 12:30:00"), 90.00);
             Ticket t8= new Ticket(Date.valueOf("2020-08-21"), "Atlanta", "Tampa", Time.valueOf("08:30:00"), Timestamp.valueOf("2020-08-21 13:15:00"), 71.25);
             Ticket t9= new Ticket(Date.valueOf("2020-08-21"), "Orlando", "Miami", Time.valueOf("17:00:00"), Timestamp.valueOf("2020-08-21 21:00:00"), 60.00);

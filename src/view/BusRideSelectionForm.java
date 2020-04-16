@@ -11,7 +11,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
-import java.util.*;
+import java.util.Objects;
+import java.util.TreeMap;
 
 public class BusRideSelectionForm {
 	private static ChoiceBox<String> destination;
@@ -127,8 +128,11 @@ public class BusRideSelectionForm {
 			departureTime.setValue(null);
 			ObservableList<String> list = departureTime.getItems();
 			list.clear();
-			if(allOptions.get(newDestination).containsKey(newOrigin))
-				list.addAll(allOptions.get(newDestination).get(newOrigin).keySet());
+			if(allOptions.containsKey(newDestination)) {
+				var originOptions = allOptions.get(newDestination);
+				if(newOrigin != null && originOptions.containsKey(newOrigin))
+					list.addAll(originOptions.get(newOrigin).keySet());
+			}
 			previousOrigin = newOrigin;
 			departureTime.setItems(list);
 			if(list.size() == 1)
