@@ -9,80 +9,82 @@ import java.util.List;
 
 public class Ticketing {
 
-    public static void main(String[] args) {
-        displayQuery(getAvailableTickets());
-        displayQuery(getAllTickets());
-    }
+	public static void main(String[] args) {
+		displayQuery(getAvailableTickets());
+		displayQuery(getAllTickets());
+	}
 
-    public static List<Ticket> getAvailableTickets(){
-        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Ticket.class)
-                .buildSessionFactory();
+	public static List<Ticket> getAvailableTickets() {
+		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
+				.addAnnotatedClass(Ticket.class)
+				.buildSessionFactory();
 
-        Session session = factory.getCurrentSession();
+		Session session = factory.getCurrentSession();
 
-        try{
-            session.beginTransaction();
+		try {
+			session.beginTransaction();
 
-            List<Ticket> tickets = session.createQuery("FROM Ticket WHERE first_name IS NULL").getResultList();
-            return tickets;
+			List<Ticket> tickets = session.createQuery("FROM Ticket WHERE first_name IS NULL").getResultList();
+			return tickets;
 
-        }finally{
-            factory.close();
-        }
-    }
+		}
+		finally {
+			factory.close();
+		}
+	}
 
-    public static List<Ticket> getAllTickets(){
-        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Ticket.class)
-                .buildSessionFactory();
+	public static List<Ticket> getAllTickets() {
+		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
+				.addAnnotatedClass(Ticket.class)
+				.buildSessionFactory();
 
-        Session session = factory.getCurrentSession();
+		Session session = factory.getCurrentSession();
 
-        try{
-            session.beginTransaction();
+		try {
+			session.beginTransaction();
 
-            List<Ticket> tickets = session.createQuery("FROM Ticket").getResultList();
-            return tickets;
+			List<Ticket> tickets = session.createQuery("FROM Ticket").getResultList();
+			return tickets;
 
-        }finally{
-            factory.close();
-        }
-    }
+		}
+		finally {
+			factory.close();
+		}
+	}
 
-    public static void updateInfo(int ticketNum, String firstName, String lastName, String email, String phone, String gender, int age){
+	public static void updateInfo(int ticketNum, String firstName, String lastName, String email, String phone, String gender, int age) {
 
-        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Ticket.class)
-                .buildSessionFactory();
+		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
+				.addAnnotatedClass(Ticket.class)
+				.buildSessionFactory();
 
-        Session session = factory.getCurrentSession();
+		Session session = factory.getCurrentSession();
 
-        try{
-            session.beginTransaction();
+		try {
+			session.beginTransaction();
 
-            System.out.println("\nGetting info of ticket: " + ticketNum);
-            Ticket ticket = session.get(Ticket.class, ticketNum);
+			System.out.println("\nGetting info of ticket: " + ticketNum);
+			Ticket ticket = session.get(Ticket.class, ticketNum);
 
-            ticket.setFirstName(firstName);
-            ticket.setLastName(lastName);
-            ticket.setEmail(email);
-            ticket.setLastName(phone);
-            ticket.setGender(gender);
-            ticket.setAge(age);
+			ticket.setFirstName(firstName);
+			ticket.setLastName(lastName);
+			ticket.setEmail(email);
+			ticket.setPhone(phone);
+			ticket.setGender(gender);
+			ticket.setAge(age);
 
-            session.getTransaction().commit();
+			session.getTransaction().commit();
 
+		}
+		finally {
+			factory.close();
+		}
 
-        }finally {
-            factory.close();
-        }
+	}
 
-    }
-
-    public static void displayQuery(List<Ticket> tickets) {
-        for(Ticket t : tickets) {
-            System.out.println(t);
-        }
-    }
+	public static void displayQuery(List<Ticket> tickets) {
+		for(Ticket t : tickets) {
+			System.out.println(t);
+		}
+	}
 }
