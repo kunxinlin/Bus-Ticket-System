@@ -66,12 +66,12 @@ public class Ticketing {
 			System.out.println("\nGetting info of ticket: " + ticketNum);
 			Ticket ticket = session.get(Ticket.class, ticketNum);
 
-			ticket.setFirstName(firstName);
-			ticket.setLastName(lastName);
-			ticket.setEmail(email);
-			ticket.setPhone(phone);
-			ticket.setGender(gender);
-			ticket.setAge(age);
+            ticket.setFirstName(firstName);
+            ticket.setLastName(lastName);
+            ticket.setEmail(email);
+            ticket.setPhone(phone);
+            ticket.setGender(gender);
+            ticket.setAge(age);
 
 			session.getTransaction().commit();
 
