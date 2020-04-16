@@ -46,7 +46,7 @@ public class TicketForm {
 		gridPane.add(title, 0, 0, 2, 1);
 		gridPane.add(priceField, 0, 1, 2, 1);
 		gridPane.add(backButton, 0, 2);
-		gridPane.add(claimButton, 0, 2);
+		gridPane.add(claimButton, 1, 2);
 
 		return new Scene(gridPane);
 	}
