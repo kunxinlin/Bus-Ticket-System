@@ -20,39 +20,6 @@ public class PassengerForm {
 
 	private static Scene scene;
 
-	public static String getFirstName() {
-		return firstName.getText();
-	}
-
-	public static String getLastName() {
-		return lastName.getText();
-	}
-
-	public static String getEmail() {
-		return email.getText();
-	}
-
-	public static String getPhone() {
-		return phone.getText();
-	}
-
-	public static int getAge() {
-		if(age.getText().equals(""))
-			return -2;
-		try {
-			return Math.max(Integer.parseInt(age.getText()), -1);
-		}
-		catch(Exception e) {
-			return -1;
-		}
-	}
-
-	public static String getGender() {
-		if(gender.getSelectedToggle() == null)
-			return null;
-		return ((RadioButton)gender.getSelectedToggle()).getText();
-	}
-
 	public static Scene getScene() {
 		if(scene == null)
 			scene = createScene();
@@ -125,5 +92,38 @@ public class PassengerForm {
 			PopupApp.displayErrorMessage("Please enter a valid numerical age.");
 		else
 			BusTicketApp.setScene(TicketForm.getScene());
+	}
+
+	public static String getFirstName() {
+		return firstName.getText();
+	}
+
+	public static String getLastName() {
+		return lastName.getText();
+	}
+
+	public static String getEmail() {
+		return email.getText();
+	}
+
+	public static String getPhone() {
+		return phone.getText();
+	}
+
+	public static int getAge() {
+		if(age.getText().equals(""))
+			return -2;
+		try {
+			return Math.max(Integer.parseInt(age.getText()), -1);
+		}
+		catch(Exception e) {
+			return -1;
+		}
+	}
+
+	public static String getGender() {
+		if(gender.getSelectedToggle() == null)
+			return null;
+		return ((RadioButton)gender.getSelectedToggle()).getText();
 	}
 }
