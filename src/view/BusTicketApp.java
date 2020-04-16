@@ -12,6 +12,11 @@ public class BusTicketApp extends Application {
 		launch(args);
 	}
 
+	public static void blockWith(Stage stage) {
+		stage.initModality(Modality.WINDOW_MODAL);
+		stage.initOwner(mainStage);
+	}
+
 	@Override
 	public void start(Stage stage) throws Exception {
 		mainStage = stage;
@@ -22,10 +27,5 @@ public class BusTicketApp extends Application {
 	public static void setScene(Scene scene) {
 		mainStage.setScene(scene);
 		mainStage.show();
-	}
-
-	public static void blockWith(Stage stage) {
-		stage.initModality(Modality.WINDOW_MODAL);
-		stage.initOwner(mainStage);
 	}
 }
