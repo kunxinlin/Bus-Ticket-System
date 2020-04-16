@@ -1,21 +1,2 @@
-Ticket No.: 1 || Name: null, null || Date: 08/20/2020 || Departure: Atlanta || Departure Time: 07:30 AM || Arrival: Houston || Estimated Arrival Time: 08/21/2020 08:30 PM || Price: 200.0
-Ticket No.: 2 || Name: null, null || Date: 08/21/2020 || Departure: Houston || Departure Time: 08:30 AM || Arrival: Dallas || Estimated Arrival Time: 08/22/2020 01:15 PM || Price: 71.25
-Ticket No.: 3 || Name: null, null || Date: 08/20/2020 || Departure: Atlanta || Departure Time: 08:00 AM || Arrival: Nashville || Estimated Arrival Time: 08/21/2020 12:45 PM || Price: 71.25
-Ticket No.: 4 || Name: null, null || Date: 08/20/2020 || Departure: Nashville || Departure Time: 01:30 AM || Arrival: Knoxville || Estimated Arrival Time: 08/21/2020 05:30 AM || Price: 60.0
-Ticket No.: 5 || Name: null, null || Date: 08/20/2020 || Departure: Atlanta || Departure Time: 08:30 AM || Arrival: Orlando || Estimated Arrival Time: 08/21/2020 04:00 PM || Price: 112.5
-Ticket No.: 6 || Name: null, null || Date: 08/20/2020 || Departure: Atlanta || Departure Time: 08:00 AM || Arrival: Savannah || Estimated Arrival Time: 08/21/2020 03:00 PM || Price: 105.0
-Ticket No.: 7 || Name: Griffin, Aaron || Date: 08/20/2020 || Departure: Atlanta || Departure Time: 08:30 AM || Arrival: Jacksonville || Estimated Arrival Time: 08/21/2020 12:30 PM || Price: 90.0
-Ticket No.: 8 || Name: null, null || Date: 08/20/2020 || Departure: Atlanta || Departure Time: 08:30 AM || Arrival: Tampa || Estimated Arrival Time: 08/21/2020 01:15 PM || Price: 71.25
-Ticket No.: 9 || Name: null, null || Date: 08/20/2020 || Departure: Orlando || Departure Time: 05:00 PM || Arrival: Miami || Estimated Arrival Time: 08/21/2020 09:00 PM || Price: 60.0
-Ticket No.: 10 || Name: null, null || Date: 08/20/2020 || Departure: Atlanta || Departure Time: 07:30 AM || Arrival: Charlotte || Estimated Arrival Time: 08/21/2020 11:15 AM || Price: 63.75
-Ticket No.: 11 || Name: null, null || Date: 08/20/2020 || Departure: Atlanta || Departure Time: 08:30 AM || Arrival: Charleston || Estimated Arrival Time: 08/21/2020 02:00 PM || Price: 82.5
-Ticket No.: 12 || Name: null, null || Date: 08/20/2020 || Departure: Atlanta || Departure Time: 08:30 AM || Arrival: Memphis || Estimated Arrival Time: 08/21/2020 03:30 PM || Price: 105.0
-Ticket No.: 13 || Name: null, null || Date: 08/20/2020 || Departure: Atlanta || Departure Time: 10:00 AM || Arrival: Montgomery || Estimated Arrival Time: 08/21/2020 01:00 PM || Price: 45.0
-Ticket No.: 14 || Name: null, null || Date: 08/22/2020 || Departure: Atlanta || Departure Time: 08:00 AM || Arrival: New Orleans || Estimated Arrival Time: 08/23/2020 03:30 PM || Price: 112.5
-Ticket No.: 15 || Name: null, null || Date: 08/22/2020 || Departure: Atlanta || Departure Time: 09:30 AM || Arrival: Huntsville || Estimated Arrival Time: 08/23/2020 01:00 AM || Price: 42.5
-Ticket No.: 16 || Name: null, null || Date: 08/22/2020 || Departure: Atlanta || Departure Time: 07:30 AM || Arrival: Little Rock || Estimated Arrival Time: 08/23/2020 04:00 PM || Price: 127.5
-Ticket No.: 17 || Name: null, null || Date: 08/24/2020 || Departure: Atlanta || Departure Time: 07:30 AM || Arrival: Kansas City || Estimated Arrival Time: 08/25/2020 08:30 PM || Price: 195.0
-Ticket No.: 18 || Name: null, null || Date: 08/24/2020 || Departure: Atlanta || Departure Time: 09:00 AM || Arrival: Louisville || Estimated Arrival Time: 08/25/2020 04:00 PM || Price: 105.0
-Ticket No.: 19 || Name: null, null || Date: 08/25/2020 || Departure: Atlanta || Departure Time: 09:00 AM || Arrival: Indianapolis || Estimated Arrival Time: 08/26/2020 06:00 PM || Price: 135.0
-Ticket No.: 20 || Name: null, null || Date: 08/25/2020 || Departure: Atlanta || Departure Time: 08:00 AM || Arrival: Richmond || Estimated Arrival Time: 08/26/2020 04:30 PM || Price: 127.5
-Ticket No.: 21 || Name: null, null || Date: 08/30/2020 || Departure: Atlanta || Departure Time: 04:00 PM || Arrival: New York City || Estimated Arrival Time: 09/01/2020 07:30 AM || Price: 232.5
+Ticket No.: 11 || Name: Test, Another || Date: 08/20/2020 || Departure: Atlanta || Departure Time: 07:30 AM || Arrival: Charlotte || Estimated Arrival Time: 08/21/2020 11:15 AM || Price: 47.81
+Ticket No.: 12 || Name: Test, Test || Date: 08/20/2020 || Departure: Atlanta || Departure Time: 08:30 AM || Arrival: Charleston || Estimated Arrival Time: 08/21/2020 02:00 PM || Price: 30.94
