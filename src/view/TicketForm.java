@@ -52,8 +52,14 @@ public class TicketForm {
 	}
 
 	private static void updatePrice() {
-		double basePrice = BusRideSelectionForm.getSelectedTicket().getPrice();
+		Ticket ticket = BusRideSelectionForm.getSelectedTicket();
+		double basePrice = ticket.getPrice();
 		price = basePrice;
+		String ticketDetails = ticket.getOrigin() + " -> " + ticket.getDestination()
+							   + "\nDepart: " + ticket.getDate() + " " + ticket.getDeparture() + "\nETA: " + ticket.getEta()
+							   + "\nName: " + PassengerForm.getLastName() + ", " + PassengerForm.getFirstName()
+							   + "\nPhone: " + PassengerForm.getPhone() + "\nEmail: " + PassengerForm.getEmail()
+							   + "\n" + PassengerForm.getGender() + ", " + PassengerForm.getAge() + "\n\n";
 		String output = String.format("Base price: $%.2f", price);
 		if(Objects.equals(PassengerForm.getGender(), "Female")) {
 			output += "\nFemale discount: 25%";
@@ -68,10 +74,10 @@ public class TicketForm {
 			price *= 0.4;
 		}
 		if(price == basePrice)
-			priceField.setText(String.format("$%.2f", price));
+			priceField.setText(ticketDetails + String.format("$%.2f", price));
 		else {
 			output += String.format("\nTotal: $%.2f", price);
-			priceField.setText(output);
+			priceField.setText(ticketDetails + output);
 		}
 	}
 
