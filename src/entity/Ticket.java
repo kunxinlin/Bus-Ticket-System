@@ -192,7 +192,7 @@ public class Ticket {
     public double getDiscountedPrice() {
         double discountedPrice = price;
         discountedPrice *= gender.toLowerCase().equals("female") ? 0.75 : 1;
-        discountedPrice *= age <= 12 ? .5 : age >= 60 ? .6 : 1;
+        discountedPrice *= age <= 12 ? .5 : age >= 60 ? .4 : 1;
         return discountedPrice;
     }
 

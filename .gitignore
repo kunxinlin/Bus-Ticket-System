@@ -12,3 +12,5 @@ out/production/Bus-Ticket-System/resources/hibernate.cfg.xml
 out/production/Bus-Ticket-System/testConnection/TestConnection.class
 
 out/production/Bus-Ticket-System/
+
+src/tickets.txt
